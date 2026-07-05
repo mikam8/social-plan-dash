@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Social-Strategie 2026/27 · M8 + Handschrift</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#faf8f5; --card:#ffffff; --ink:#1c1a17; --muted:#6f6a62; --line:#e8e3db;
+    --accent:#b4552d; --accent-soft:#f6e8e0;
+    --save:#2d6a4f; --save-bg:#e3f0ea;
+    --send:#b4552d; --send-bg:#f6e8e0;
+    --komm:#5a4fcf; --komm-bg:#eae8fa;
+    --watch:#8a6d1f; --watch-bg:#f5eed6;
+    --kurs:#1c1a17; --m8:#b4552d;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--ink);line-height:1.55;padding-bottom:80px}
+  .wrap{max-width:920px;margin:0 auto;padding:0 18px}
+  header{padding:44px 0 10px}
+  h1{font-family:'Fraunces',serif;font-weight:700;font-size:clamp(1.7rem,5vw,2.6rem);line-height:1.15}
+  .sub{color:var(--muted);margin-top:10px;font-size:.95rem;max-width:620px}
+  h2{font-family:'Fraunces',serif;font-weight:600;font-size:1.35rem;margin:42px 0 16px}
+  .rhythm{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;font-size:.9rem;color:var(--muted)}
+  .rhythm b{color:var(--ink)}
+  /* Monatskarten */
+  .months{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:12px}
+  .mcard{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px;cursor:pointer;transition:border-color .15s}
+  .mcard:hover{border-color:var(--accent)}
+  .mcard.active{border-color:var(--accent);background:var(--accent-soft)}
+  .mcard .num{font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+  .mcard .theme{font-family:'Fraunces',serif;font-weight:600;font-size:1.02rem;margin:4px 0 6px}
+  .mcard .anchor{font-size:.8rem;color:var(--muted)}
+  .badge-ads{display:inline-block;margin-top:8px;font-size:.68rem;font-weight:600;letter-spacing:.05em;background:var(--send-bg);color:var(--send);border-radius:20px;padding:2px 9px}
+  /* Filter */
+  .filters{position:sticky;top:0;background:var(--bg);padding:14px 0 12px;z-index:5;border-bottom:1px solid var(--line)}
+  .chiprow{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:8px}
+  .chip{border:1px solid var(--line);background:var(--card);border-radius:20px;padding:5px 13px;font-size:.82rem;cursor:pointer;color:var(--muted);font-family:inherit}
+  .chip.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+  .search{width:100%;border:1px solid var(--line);border-radius:10px;padding:9px 13px;font-size:.9rem;font-family:inherit;background:var(--card)}
+  .count{font-size:.8rem;color:var(--muted);margin-top:8px}
+  /* Hooks */
+  .hook{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:13px 15px;margin-top:10px;display:flex;gap:12px;align-items:flex-start}
+  .hook .txt{flex:1}
+  .hook .text{font-size:.95rem;font-weight:500}
+  .hook .meta{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+  .tag{font-size:.68rem;font-weight:600;letter-spacing:.04em;border-radius:20px;padding:2px 9px}
+  .t-save{background:var(--save-bg);color:var(--save)}
+  .t-send{background:var(--send-bg);color:var(--send)}
+  .t-komm{background:var(--komm-bg);color:var(--komm)}
+  .t-watch{background:var(--watch-bg);color:var(--watch)}
+  .t-neutral{background:var(--bg);color:var(--muted);border:1px solid var(--line)}
+  .copy{border:1px solid var(--line);background:var(--bg);border-radius:9px;padding:7px 11px;font-size:.78rem;cursor:pointer;font-family:inherit;color:var(--muted);white-space:nowrap}
+  .copy:active{background:var(--ink);color:#fff}
+  /* Ad-Timeline */
+  .ads{display:grid;gap:10px}
+  .adrow{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:13px 16px;display:grid;grid-template-columns:110px 1fr;gap:12px;font-size:.88rem}
+  .adrow .p{font-weight:600}
+  .adrow .b{color:var(--accent);font-weight:600}
+  .rules{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px}
+  .rules li{margin:8px 0 8px 18px;font-size:.9rem}
+  footer{margin-top:48px;font-size:.78rem;color:var(--muted)}
+  @media(max-width:600px){
+    .adrow{grid-template-columns:1fr}
+    header{padding-top:30px}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>Social-Strategie 2026/27</h1>
+  <p class="sub">M8 Studio + Handschrift-Kurs · August 2026 bis Juli 2027 · LinkedIn + Instagram · Ads ab Monat 4. Jeder Hook trägt sein Ziel-Signal: <b>Save</b> (wird gespeichert), <b>Send</b> (wird weitergeleitet), <b>Kommentar</b>, <b>Watch</b> (wird zu Ende geschaut). Das ist es, was die Algorithmen 2026 belohnen.</p>
+</header>
+
+<h2>Wochenrhythmus (jeden Monat gleich)</h2>
+<div class="rhythm">
+  <b>Mo</b> LinkedIn-Text mit Kante · <b>Di</b> Kurs-Reel · <b>Mi</b> LinkedIn-Dokument-Post · <b>Do</b> Kurs- oder M8-Reel · <b>Fr</b> LinkedIn-Kurzvideo · <b>Sa</b> IG-Carousel · <b>So</b> frei.<br><br>
+  Batching: 1 Drehtag + 1 Schreibtag pro Monat. LinkedIn Di bis Do morgens posten, erste 60 Minuten auf Kommentare antworten. Reels: Hook in Sekunde 0 bis 3, Keywords in Caption + Voiceover + On-Screen-Text, 3 bis 5 Hashtags, Auto-Captions an.
+</div>
+
+<h2>Die 12 Monate</h2>
+<div class="months" id="months"></div>
+
+<h2>Hook-Bibliothek</h2>
+<div class="filters">
+  <div class="chiprow" id="f-spur"></div>
+  <div class="chiprow" id="f-fmt"></div>
+  <div class="chiprow" id="f-sig"></div>
+  <input class="search" id="search" type="text" placeholder="Hooks durchsuchen …">
+  <div class="count" id="count"></div>
+</div>
+<div id="hooks"></div>
+
+<h2>Ad-Fahrplan</h2>
+<div class="ads">
+  <div class="adrow"><div><div class="p">Monat 1–3</div><div>Aug–Okt 26</div></div><div><span class="b">0 €</span> · Organisch testen. Meta- + TikTok-Pixel ab Tag 1 auf der Salespage, Retargeting-Audience baut sich auf. Trial Reels für jeden neuen Hook-Typ.</div></div>
+  <div class="adrow"><div><div class="p">Monat 4–6</div><div>Nov 26–Jan 27</div></div><div><span class="b">300 €/Monat</span> · 1–2 Boosts auf bewiesene Gewinner-Reels (Kurs) + erste Retargeting-Kampagne auf Salespage-Besucher. Boost-Kriterium: überdurchschnittliche Saves + Sends UND zahlt auf ein Ziel ein.</div></div>
+  <div class="adrow"><div><div class="p">Monat 7–9</div><div>Feb–Apr 27</div></div><div><span class="b">300–500 €/Monat</span> · Skalieren, was unter 25 € Cost per Sale liegt. Sonst Budget halten, Creative wechseln statt Budget erhöhen.</div></div>
+  <div class="adrow"><div><div class="p">Monat 10–12</div><div>Mai–Jul 27</div></div><div><span class="b">nach Kassenlage</span> · Nur Winner weiterlaufen lassen. M8-Boosts nur mit Anlass (z. B. Recruiting-Carousel vor der Azubi-Saison).</div></div>
+  <div class="adrow"><div><div class="p">Stopp-Regeln</div></div><div>Boost ohne Effekt nach 100 € → stoppen. Cost per Sale über 40 € nach 2 Wochen → Creative wechseln. 3 erfolglose Ad-Monate → zurück auf organisch, Salespage prüfen. LinkedIn-Ads: bei diesem Budget gar nicht, die 10k-Deals kommen aus dem Vertriebs-Playbook.</div></div>
+</div>
+
+<h2>Regeln (nicht verhandelbar)</h2>
+<div class="rules"><ol>
+  <li>Hook zuerst: Sekunde 0–3, Slide 1, Zeile 1. Sitzt der Hook nicht, wird nicht gepostet.</li>
+  <li>Ein Post, ein Signal: Save, Send, Kommentar oder Watch. Nie alles gleichzeitig wollen.</li>
+  <li>Nie verkäuferisch: CTA ist eine offene Tür („Link im Profil" · „15 Minuten, kostenlos"). Keine Rabatt-Rhetorik.</li>
+  <li>Kurs = Du-Form, desire-first. M8 = Sie-Form, Urteil und Beweis (Capital, NUSSBAUM, MBST, SAMSYS).</li>
+  <li>Arbeiten ganz zeigen, nie zerstückeln. Michaela Al-Badri immer in einer Zeile.</li>
+  <li>Quartals-Review Ende Okt · Jan · Apr · Jul: Gewinner verdoppeln, Schwaches austauschen.</li>
+</ol></div>
+
+<footer>Quelle: Obsidian-Vault · „Social-Strategie – Content-Plan 12 Monate" · Stand 05.07.2026</footer>
+</div>
+
+<script>
+const MONTHS=[
+ {n:1,name:"August 2026",theme:"Das ist meine Hand",anchor:"Kanal-Aufbau, Kurs-Sichtbarkeit, 30-Tage-Basis läuft als Fundament"},
+ {n:2,name:"September 2026",theme:"Gut sein reicht nicht",anchor:"Azubis starten, Betriebe merken Lücken · Kurs: Neustart-Energie"},
+ {n:3,name:"Oktober 2026",theme:"Die Messe entscheidet jetzt",anchor:"Messe-Konzept-Fenster BAU 2027 · Oktober-Pipeline läuft parallel"},
+ {n:4,name:"November 2026",theme:"Bewiesenes skalieren",anchor:"Boosts auf Gewinner + Retargeting · Kurs als Weihnachtsgeschenk",ads:true},
+ {n:5,name:"Dezember 2026",theme:"Von Hand",anchor:"Weihnachtspost-Hochsaison · Jahreswechsel als Neustart-Anlass",ads:true},
+ {n:6,name:"Januar 2027",theme:"Messe-Monat",anchor:"BAU München + Grüne Woche laufen · M8-Spur dominiert",ads:true},
+ {n:7,name:"Februar 2027",theme:"Zeig, dass du es bist",anchor:"Valentinstag (Liebesbriefe) · Nachfolge-Welle als M8-Thema",ads:true},
+ {n:8,name:"März 2027",theme:"Handwerk zeigen",anchor:"Regionale Frühjahrs- und Handwerksmessen B/BB",ads:true},
+ {n:9,name:"April 2027",theme:"Leute finden",anchor:"Azubi-Recruiting heiße Phase · Employer-Branding-Monat",ads:true},
+ {n:10,name:"Mai 2027",theme:"Momente, die bleiben",anchor:"Hochzeitssaison · Jubiläen und Firmenfeste",ads:true},
+ {n:11,name:"Juni 2027",theme:"Halbzeit, ehrlich",anchor:"Halbjahres-Review öffentlich · Herbstmessen-Planung beginnt",ads:true},
+ {n:12,name:"Juli 2027",theme:"Ein Jahr sichtbar",anchor:"1 Jahr M8 Studio · Jahres-Review · Best-ofs neu verwerten",ads:true}
+];
+// spur: kurs|m8 · fmt: reel|carousel|linkedin · sig: save|send|komm|watch
+const HOOKS=[
+ [1,"kurs","reel","watch","Ich kann jede Unterschrift nachmachen. Ohne zu üben."],
+ [1,"kurs","reel","send","Das ist die Unterschrift einer Chefin. Das die eines Menschen, der sich klein macht. Beide echt."],
+ [1,"kurs","reel","send","Dein Name ist das einzige Wort, das du täglich schreibst. Und das einzige, das du nie gelernt hast."],
+ [1,"kurs","reel","watch","30 Sekunden. Aus krakelig wird klar. Schau bis zum Ende."],
+ [1,"m8","reel","watch","Ich zeige Ihnen zwei Firmenlogos. Eins kostet Aufträge. Sie sehen sofort, welches."],
+ [1,"m8","reel","komm","Was eine Kreativdirektorin sieht, wenn sie an Ihrer Halle vorbeifährt."],
+ [1,"kurs","carousel","save","5 Stifte. Einer verändert deine Handschrift sofort."],
+ [1,"m8","carousel","save","Woran man von außen erkennt, dass eine Firma besser ist als ihr Auftritt."],
+ [1,"m8","linkedin","komm","Ich habe 20 Jahre Marken gebaut. Jetzt sage ich Ihnen, was davon Ihr Betrieb wirklich braucht: weniger, als Sie denken."],
+ [1,"m8","linkedin","send","Ihr bester Monteur kündigt nicht wegen Geld. Er kündigt, weil die Konkurrenz nach mehr aussieht."],
+ [1,"m8","linkedin","komm","Berlin hat hunderte gute Baufirmen. Man sieht nur keine davon."],
+ [2,"kurs","reel","send","Dein Kind lernt gerade schreiben. Und du? Schreibst wie damals in der 8. Klasse."],
+ [2,"kurs","reel","send","Handschrift ist das neue Handwerk. KI kann alles. Außer das."],
+ [2,"kurs","reel","watch","Ich schreibe deinen Namen. Einmal wie du. Einmal wie du sein könntest."],
+ [2,"kurs","reel","save","Warum Ärzte unleserlich schreiben und Chefs riesig: Was Größe über Selbstbild verrät."],
+ [2,"m8","reel","komm","Dieser Betrieb sucht seit 8 Monaten Leute. Die Website sieht aus wie 2009. Das hängt zusammen."],
+ [2,"m8","reel","watch","Vorher, nachher: ein Baustoffhandel, den man jetzt sieht. Capital Baustoffe, echter Fall."],
+ [2,"kurs","carousel","save","Deine Unterschrift in 4 Schritten. Heute Abend noch."],
+ [2,"m8","carousel","save","7 Signale, dass Ihr Auftritt Bewerber kostet."],
+ [2,"m8","linkedin","send","43 Prozent der Betriebe können Stellen nicht besetzen. Die wenigsten wissen: Bewerber googeln, bevor sie anrufen."],
+ [2,"m8","linkedin","send","Der Azubi-Jahrgang 2027 wird ab Herbst umworben. Wer im Oktober anfängt, ist zu spät."],
+ [2,"m8","linkedin","komm","Eine Frage an Inhaber: Wann haben Sie Ihre eigene Website zuletzt auf dem Handy angesehen?"],
+ [3,"kurs","reel","save","Ich habe 100 Unterschriften analysiert. Diese 3 Muster sagen: Hier zweifelt jemand."],
+ [3,"kurs","reel","komm","Schreib ein Wort. Ich sage dir, was deine Hand verrät."],
+ [3,"kurs","reel","watch","Der Moment, in dem jemand zum ersten Mal seine neue Unterschrift schreibt."],
+ [3,"kurs","reel","send","Notar, Arztpraxis, Autokauf: die 3 Orte, an denen deine Unterschrift laut spricht."],
+ [3,"m8","reel","send","Ein Messestand kostet 40.000 Euro. Und dann steht da ein Roll-up von 2019."],
+ [3,"m8","reel","watch","Was auf einer Messe wirklich hängen bleibt. Es ist nie der Stand. Es ist die eine Idee."],
+ [3,"kurs","carousel","save","Die 3 Fehler, die jede Unterschrift ruinieren. Nummer 3 ist Angst."],
+ [3,"m8","carousel","save","Messe 2027: Was Sie im Oktober entscheiden müssen, damit Januar sitzt."],
+ [3,"m8","linkedin","send","Wer im Januar auf der BAU auffallen will, vergibt das Konzept jetzt. Nicht im Dezember."],
+ [3,"m8","linkedin","komm","Ich war auf vielen Messen. An 90 Prozent der Stände erinnert sich niemand. Woran das liegt, ist kein Geheimnis."],
+ [3,"m8","linkedin","komm","Ihr Standbauer baut den Stand. Aber wer baut den Grund, stehen zu bleiben?"],
+ [4,"kurs","reel","send","Das schönste Geschenk kostet 97 Euro und hält ein Leben: der eigene Name."],
+ [4,"kurs","reel","send","Weihnachtskarten schreiben, ohne sich für die Schrift zu schämen. Dieses Jahr wirklich."],
+ [4,"kurs","reel","watch","Ich schreibe die Namen meiner Follower. Teil 1."],
+ [4,"kurs","reel","watch","Was passiert, wenn du 21 Tage lang täglich 10 Minuten schreibst. Dokumentiert."],
+ [4,"m8","reel","komm","Generationswechsel: Der Junior übernimmt. Und fährt den Auftritt des Vaters weiter. Warum eigentlich?"],
+ [4,"m8","reel","send","109.000 Übergaben bis 2029. Fast keine bekommt ein neues Gesicht."],
+ [4,"kurs","carousel","save","Geschenk-Guide für Menschen, die alles haben. Außer einer Unterschrift, die sie mögen."],
+ [4,"m8","carousel","save","Übergabe geplant? Diese 5 Fragen zum Auftritt vor dem Notartermin."],
+ [4,"m8","linkedin","komm","Der häufigste Satz bei Übergaben: Das haben wir immer so gemacht. Der teuerste auch."],
+ [4,"m8","linkedin","komm","Ein Betrieb, zwei Generationen, eine Frage: Wessen Gesicht zeigt die Firma 2027?"],
+ [4,"m8","linkedin","save","Was ich Junioren rate, die den Betrieb der Eltern übernehmen: Ändert nicht alles. Ändert das Sichtbare."],
+ [5,"kurs","reel","send","Eine getippte Nachricht wird weggewischt. Ein handgeschriebenes Wort wird aufgehoben. 10 Jahre, bei mir."],
+ [5,"kurs","reel","watch","Ich schreibe die Weihnachtspost meiner Familie. Live, alle 24 Karten."],
+ [5,"kurs","reel","send","Der Brief, den du nie geschrieben hast. Schreib ihn dieses Jahr."],
+ [5,"kurs","reel","save","Silvester-Alternative: Statt 10 Vorsätzen ein Wort. Von Hand. Groß."],
+ [5,"m8","reel","komm","Jahresende ist Bilanz-Zeit. Machen Sie die Bilanz, die nicht in Zahlen steht: Sieht man Ihre Firma?"],
+ [5,"kurs","carousel","save","Was du auf eine Weihnachtskarte schreibst, wenn dir nie was einfällt."],
+ [5,"m8","carousel","save","Der Jahreswechsel-Check für Ihren Auftritt. 6 Fragen, 10 Minuten."],
+ [5,"m8","linkedin","save","Zwischen den Jahren entscheiden Inhaber die großen Dinge. Hier ist eine Entscheidungshilfe für eine davon."],
+ [5,"m8","linkedin","komm","2027 wird das Jahr, in dem man Ihren Betrieb sieht. Oder wieder nicht. Beides ist eine Entscheidung."],
+ [6,"kurs","reel","komm","Neues Jahr, gleiche Unterschrift? Du änderst alles andere auch."],
+ [6,"kurs","reel","watch","Was 15 Minuten am Tag mit deiner Schrift machen. Woche 1 gegen Woche 4."],
+ [6,"kurs","reel","send","Die Unterschriften der Mächtigen: Was Merkel, Musk und deine gemeinsam haben. Nichts. Noch."],
+ [6,"kurs","reel","send","Ich habe meiner Mutter ihre Unterschrift zurückgegeben. Sie hatte sie 40 Jahre nicht gemocht."],
+ [6,"m8","reel","watch","Ich laufe über die Grüne Woche und zeige Ihnen die 3 besten Stände. Und warum sie funktionieren."],
+ [6,"m8","reel","save","BAU 2027: Das haben die Stände gemeinsam, an denen alle stehen bleiben."],
+ [6,"kurs","carousel","save","Dein 21-Tage-Plan für eine Schrift, die du zeigen willst."],
+ [6,"m8","carousel","save","Messe-Nachlese: 5 Dinge, die gute Aussteller nächstes Mal anders machen."],
+ [6,"m8","linkedin","komm","Ich war auf der BAU. Die teuersten Stände waren nicht die besten. Die klarsten waren es."],
+ [6,"m8","linkedin","send","Live von der Grünen Woche: Was Brandenburger Aussteller von den Großen lernen können. Und was nicht."],
+ [6,"m8","linkedin","send","Nach der Messe ist vor der Messe: Wer jetzt nachfasst, gewinnt das Jahr."],
+ [7,"kurs","reel","send","Schreib ihr einen Brief. Einen echten. Ich zeig dir wie."],
+ [7,"kurs","reel","send","Liebesbriefe, die aufgehoben werden, haben eins gemeinsam: Man erkennt die Hand."],
+ [7,"kurs","reel","send","Deine Handschrift auf dem Familienrezept wird mal jemandes Schatz sein."],
+ [7,"kurs","reel","watch","POV: Du unterschreibst den Mietvertrag und der Makler schaut zweimal hin."],
+ [7,"m8","reel","watch","Zwei Brüder übernehmen den Betrieb. Neues Kapitel, neues Gesicht. So kann das aussehen."],
+ [7,"m8","reel","save","Der Unterschied zwischen einem Logo und einer Marke, in 20 Sekunden."],
+ [7,"kurs","carousel","save","Anleitung: Der Brief zum Valentinstag, der nicht kitschig ist."],
+ [7,"m8","carousel","save","Übernahme kommuniziert man einmal. Diese 6 Bausteine gehören dazu."],
+ [7,"m8","linkedin","send","57 Prozent der Inhaber sind über 55. Die Übergabe-Welle rollt. Die Auftritts-Welle fehlt noch."],
+ [7,"m8","linkedin","komm","Was Bewerber, Kunden und Banken gemeinsam haben: Alle googeln den Betrieb vor dem ersten Gespräch."],
+ [7,"m8","linkedin","komm","Eine Übergabe ohne sichtbaren Neustart ist eine vertane Schlagzeile."],
+ [8,"kurs","reel","watch","Jeder kann das lernen. Hier ist der Beweis: 6 Schüler, 6 Wochen, 6 Unterschriften."],
+ [8,"kurs","reel","save","Das Alphabet, das du in der Schule gelernt hast, war nie für Erwachsene gedacht."],
+ [8,"kurs","reel","save","Ich teste 5 Füller unter 30 Euro. Einer schlägt alle."],
+ [8,"kurs","reel","send","Deine Schrift wird mit dir alt. Wenn du sie pflegst, wird sie besser statt schlechter."],
+ [8,"m8","reel","komm","Handwerk kann man sehen. Warum verstecken es dann so viele Websites hinter Stockfotos?"],
+ [8,"m8","reel","save","Ein Dachdecker, dessen Instagram besser verkauft als jede Anzeige. Analyse."],
+ [8,"kurs","carousel","save","Von Druckbuchstaben zu einer echten Handschrift: der Weg in 5 Etappen."],
+ [8,"m8","carousel","save","Messe-Checkliste für regionale Aussteller: klein im Budget, groß im Auftritt."],
+ [8,"m8","linkedin","send","Regionale Messen schlagen die großen oft im Verhältnis von Kosten zu Kontakten. Wenn der Auftritt sitzt."],
+ [8,"m8","linkedin","komm","Stockfotos auf Handwerker-Websites sind wie geliehene Arbeitskleidung. Jeder merkt es."],
+ [8,"m8","linkedin","send","Zeigen Sie die Halle, die Hände, den Staub. Das ist die Marke. Alles andere ist Verpackung."],
+ [9,"kurs","reel","send","Deine Bewerbung sieht aus wie alle. Bis auf eine Zeile: die handgeschriebene."],
+ [9,"kurs","reel","save","Was Personaler über handschriftliche Notizen im Gespräch sagen. Ich habe gefragt."],
+ [9,"kurs","reel","watch","Unterschriften-Glow-up: Ein Azubi vor dem ersten Arbeitsvertrag."],
+ [9,"kurs","reel","send","Die Notiz am Kühlschrank, der Zettel im Paket, die Karte im Blumenstrauß: Handschrift ist Beziehung."],
+ [9,"m8","reel","watch","Dieser Betrieb bekommt 40 Bewerbungen im Monat. Sein Geheimnis passt in ein Reel."],
+ [9,"m8","reel","save","Azubis entscheiden in 8 Sekunden auf dem Handy, ob ein Betrieb cool ist. So bestehen Sie den Test."],
+ [9,"kurs","carousel","save","5 handgeschriebene Gesten, die im Job hängen bleiben."],
+ [9,"m8","carousel","save","Der Azubi-Check: So sieht Ihr Betrieb auf dem Handy eines 17-Jährigen aus."],
+ [9,"m8","linkedin","send","Employer Branding im Mittelstand kostet 30.000 im Jahr. Keins zu haben kostet mehr: jede unbesetzte Stelle."],
+ [9,"m8","linkedin","komm","Ihre nächste Fachkraft sieht zuerst Ihr Google-Profil, dann Ihre Website, dann nichts mehr. Oder alles."],
+ [9,"m8","linkedin","send","Der Betrieb, der seine Leute zeigt, bekommt Leute. So einfach, so selten."],
+ [10,"kurs","reel","send","Neuer Nachname, neue Unterschrift. Übe sie vor der Hochzeit, nicht am Standesamt."],
+ [10,"kurs","reel","send","Das Gästebuch eurer Hochzeit in 30 Jahren. Deshalb lohnt sich jede leserliche Zeile."],
+ [10,"kurs","reel","watch","Ich gestalte Namenskarten für eine echte Hochzeit. Von Hand. Alle 80."],
+ [10,"kurs","reel","save","Die Danksagung, die niemand wegwirft."],
+ [10,"m8","reel","watch","50 Jahre Betrieb. Und die Feier sieht aus wie 50 Jahre Betrieb. Es ginge auch so:"],
+ [10,"m8","reel","komm","Firmenjubiläum ist der einzige Anlass, bei dem Werbung niemanden stört. Nutzen Sie ihn."],
+ [10,"kurs","carousel","save","Hochzeits-Schreibset: Was du für Karten, Gästebuch und Unterschrift brauchst."],
+ [10,"m8","carousel","save","Jubiläums-Playbook: 6 Ideen, die aus 50 Jahren eine Geschichte machen."],
+ [10,"m8","linkedin","save","Jubiläen sind Anlass Nummer 4. Alle schauen hin, keiner nutzt es. Eine Anleitung."],
+ [10,"m8","linkedin","komm","Was eine Hochzeit und ein Firmenjubiläum gemeinsam haben: Beide verdienen mehr als eine Sektbar."],
+ [11,"kurs","reel","send","1.000 Menschen haben bei mir schreiben gelernt. Das haben sie mir beigebracht."],
+ [11,"kurs","reel","send","Die häufigste Nachricht in meinem Postfach: Ich dachte, ich bin zu alt dafür. Spoiler:"],
+ [11,"kurs","reel","watch","Ich zeige meine eigene Schrift von vor 10 Jahren. Ja, wirklich."],
+ [11,"kurs","reel","send","Zeugnis-Zeit: Schreib deinem Kind eine Karte statt nur zu unterschreiben."],
+ [11,"m8","reel","watch","Ein Jahr M8 Studio: die 3 Projekte, die mich am meisten gelehrt haben."],
+ [11,"m8","reel","save","Herbstmessen 2027: Wer jetzt plant, zahlt weniger und fällt mehr auf. Beides belegbar."],
+ [11,"kurs","carousel","save","6 Monate Schreibpraxis: Was Schüler wirklich erreicht haben, mit Beweisfotos."],
+ [11,"m8","carousel","save","Halbjahres-Bilanz für Inhaber: 5 Sichtbarkeits-Fragen vor der Sommerpause."],
+ [11,"m8","linkedin","komm","Halbzeit 2027. Zeit für die unbequeme Frage: Ist Ihr Betrieb sichtbarer als im Januar?"],
+ [11,"m8","linkedin","send","Was ich nach einem Jahr Selbstständigkeit über den Mittelstand gelernt habe: Er ist besser, als er aussieht."],
+ [11,"m8","linkedin","send","Die Herbstmesse-Deadline ist näher, als der Kalender behauptet."],
+ [12,"kurs","reel","watch","Ein Jahr, ein Kurs, hunderte Unterschriften. Das Vorher-Nachher-Video, das ihr verdient habt."],
+ [12,"kurs","reel","send","Die 5 Reels, die ihr am meisten geteilt habt. Und was sie gemeinsam haben."],
+ [12,"kurs","reel","komm","Urlaubspostkarten sind das Sommer-Comeback. Wer kriegt deine erste?"],
+ [12,"kurs","reel","send","Was bleibt von einem Jahr Handschrift? Ein Stapel Papier, den keine Cloud ersetzt."],
+ [12,"m8","reel","watch","Ein Jahr M8 Studio in 60 Sekunden: jede Marke, jeder Mut-Moment."],
+ [12,"m8","reel","komm","Das habe ich Kunden dieses Jahr am häufigsten ausgeredet. Es hat sie Geld gespart."],
+ [12,"kurs","carousel","save","Das Jahr in Unterschriften: 12 Verwandlungen, 12 Geschichten."],
+ [12,"m8","carousel","save","12 Monate, 12 Learnings über Sichtbarkeit im Mittelstand."],
+ [12,"m8","linkedin","send","Vor einem Jahr habe ich M8 Studio gegründet. Hier ist die Bilanz, ungeschönt."],
+ [12,"m8","linkedin","komm","Ein Jahr lang habe ich Betrieben beim Sichtbarwerden zugesehen. Das Muster ist immer dasselbe."],
+ [12,"m8","linkedin","send","Jahr 2 beginnt. Wer im Herbst auf einer Messe steht oder Leute sucht: Jetzt reden kostet nichts."]
+];
+
+const SIG={save:["Save","t-save"],send:["Send","t-send"],komm:["Kommentar","t-komm"],watch:["Watch","t-watch"]};
+const FMT={reel:"Reel",carousel:"Carousel",linkedin:"LinkedIn"};
+const SPUR={kurs:"🖊 Kurs",m8:"🏗 M8"};
+
+let f={spur:null,fmt:null,sig:null,month:null,q:""};
+
+function chips(el,items,key){
+  const box=document.getElementById(el);
+  items.forEach(([val,label])=>{
+    const c=document.createElement('button');c.className='chip';c.textContent=label;
+    c.onclick=()=>{f[key]=f[key]===val?null:val;render();};
+    c.dataset.val=val;box.appendChild(c);
+  });
+}
+chips('f-spur',[["kurs","🖊 Kurs"],["m8","🏗 M8 Studio"]],'spur');
+chips('f-fmt',[["reel","Reels"],["carousel","Carousels"],["linkedin","LinkedIn"]],'fmt');
+chips('f-sig',[["save","Save"],["send","Send"],["komm","Kommentar"],["watch","Watch"]],'sig');
+document.getElementById('search').addEventListener('input',e=>{f.q=e.target.value.toLowerCase();render();});
+
+const mbox=document.getElementById('months');
+MONTHS.forEach(m=>{
+  const d=document.createElement('div');d.className='mcard';d.dataset.m=m.n;
+  d.innerHTML=`<div class="num">Monat ${m.n} · ${m.name}</div><div class="theme">„${m.theme}"</div><div class="anchor">${m.anchor}</div>${m.ads?'<span class="badge-ads">ADS AKTIV</span>':''}`;
+  d.onclick=()=>{f.month=f.month===m.n?null:m.n;render();document.getElementById('hooks').scrollIntoView({behavior:'smooth'});};
+  mbox.appendChild(d);
+});
+
+function render(){
+  document.querySelectorAll('.mcard').forEach(c=>c.classList.toggle('active',+c.dataset.m===f.month));
+  ['f-spur','f-fmt','f-sig'].forEach((id,i)=>{
+    const key=['spur','fmt','sig'][i];
+    document.querySelectorAll('#'+id+' .chip').forEach(c=>c.classList.toggle('on',c.dataset.val===f[key]));
+  });
+  const list=HOOKS.filter(h=>
+    (!f.month||h[0]===f.month)&&(!f.spur||h[1]===f.spur)&&(!f.fmt||h[2]===f.fmt)&&(!f.sig||h[3]===f.sig)&&(!f.q||h[4].toLowerCase().includes(f.q))
+  );
+  const box=document.getElementById('hooks');box.innerHTML='';
+  list.forEach(h=>{
+    const m=MONTHS[h[0]-1];const s=SIG[h[3]];
+    const d=document.createElement('div');d.className='hook';
+    d.innerHTML=`<div class="txt"><div class="text">${h[4]}</div><div class="meta"><span class="tag ${s[1]}">${s[0]}</span><span class="tag t-neutral">${SPUR[h[1]]}</span><span class="tag t-neutral">${FMT[h[2]]}</span><span class="tag t-neutral">${m.name}</span></div></div>`;
+    const b=document.createElement('button');b.className='copy';b.textContent='Kopieren';
+    b.onclick=()=>{navigator.clipboard.writeText(h[4]);b.textContent='✓ Kopiert';setTimeout(()=>b.textContent='Kopieren',1200);};
+    d.appendChild(b);box.appendChild(d);
+  });
+  document.getElementById('count').textContent=`${list.length} von ${HOOKS.length} Hooks`;
+}
+render();
+</script>
+</body>
+</html>
